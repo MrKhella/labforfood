@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-shadow: 2px 2px 20px #808080;
+  border-radius: 5px;
+  height: 80vh;
+}
+#login .container #login-row #login-column #login-box {
+  max-width: 600px;
+  height: 320px;
+  box-shadow: 2px 2px 20px #808080;
+  border-radius: 5px;
+  background-color: rgba(220, 230, 252, 0.726);
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login
+  .container
+  #login-row
+  #login-column
+  #login-box
+  #login-form
+  #register-link {
+  margin-top: -85px;
+}
+.corrente {
+  color: #000;
+  background: #eaeaea url("./../../assets/img/icon.png") no-repeat 50% 0;
+  border-bottom: none;
+}

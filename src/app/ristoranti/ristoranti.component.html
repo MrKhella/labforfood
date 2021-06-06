@@ -1,0 +1,72 @@
+<body clasS="bodyRisto">
+  <h2 class="text-center">L'IMBARAZZO E' NELLA SCELTA!</h2>
+  <h6 class="text-center">Scegli il tuo ristorante preferito</h6>
+  <!-- search -->
+
+  <div class="input-group mb-3">
+    <!-- SELECT -->
+    <div class="input-group-append select">
+      <span for="" style="margin-right: 10px">Filtra per categoria </span>
+      <select
+        class="btn btn-outline text-info scegli"
+        (change)="filtro($event)"
+        [(ngModel)]="filter"
+      >
+        <option value="" selected="true">Tutti i ristoranti</option>
+        <option value="Pizzeria">Pizzerie</option>
+        <option value="Fast food">Fast-Food</option>
+        <option value="Ristorante giapponese">Giapponese</option>
+      </select>
+    </div>
+
+    <!-- SELECT -->
+  </div>
+  <span *ngIf="isLoaderVisible" id="loader"
+    ><img src="./../../assets/img/loading.gif"
+  /></span>
+
+  <div class="grid-container container">
+    <div class="grid-item" *ngFor="let r of ristorantiCercati">
+      <div class="">
+        <div class="row">
+          <div class="food_tile fda_food_row active">
+            <img
+              src="http://l4com.labforweb.it/backend/web/img/ristoranti/{{
+                r.Logo
+              }}"
+              alt=""
+              class="fda_product_img"
+            />
+            <h3 class="nomeRistorante">{{ r.Ristorante }}</h3>
+            <h6 class="tipologia">{{ r.tipologia.Tipologia }}</h6>
+            <ul id="dettagli">
+              <li>
+                <span style="display: block">Tempi di consegna</span>
+                <span class="tipologia"> {{ r.TempiConsegna }} minuti </span>
+              </li>
+              <li>
+                <span style="display: block">Costi di consegna</span>
+                <span class="tipologia"
+                  >{{ r.CostiConsegna | currency: "EUR" }}
+                </span>
+              </li>
+              <li>
+                <span style="display: block">Ordine minimo</span>
+                <span class="tipologia">
+                  {{ r.OrdineMinimo | currency: "EUR" }}
+                </span>
+              </li>
+            </ul>
+            <button
+              type="button"
+              class="btn btn-sm btn-default"
+              [routerLink]="['/prodotti', r.IdRistorante]"
+            >
+              Vedi il menù
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

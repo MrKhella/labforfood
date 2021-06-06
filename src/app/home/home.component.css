@@ -1,0 +1,42 @@
+.middle {
+  height: 250px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px #808080;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  justify-content: space-around;
+}
+.carousel {
+  margin-top: 30px;
+  height: 40px;
+}
+.titoloHome {
+  align-self: flex-end;
+}
+.search {
+  width: 50%;
+  max-height: 50%;
+  margin: 0 auto;
+  align-self: flex-start;
+}
+.bottom {
+  height: 150px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-content: space-between;
+}
+.pay img {
+  width: 50%;
+}
+.download img {
+  width: 150px;
+}
+.download {
+  text-align: end;
+}
+.text {
+  text-shadow: 2px 2px 20px rgb(129, 129, 129);
+}

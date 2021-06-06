@@ -1,0 +1,36 @@
+<h1>Riepilogo ordine</h1>
+<div class="profilo">
+  <div class="benvenuto">
+    <!-- <h3>Ciao {{ user.username }}</h3> -->
+    <h4>Ecco il riepilogo del tuo ordine</h4>
+    <h5>Stai mandando l'ordine a:</h5>
+  </div>
+  <table class="table table-light">
+    <thead class="thead">
+      <tr>
+        <th scope="col">Prodotto</th>
+        <th scope="col">Qta</th>
+        <th scope="col">Prezzo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let o of ordineCliente">
+        <td>{{ o.Prodotto }}</td>
+        <td>{{ o.Unita }}</td>
+        <td>{{ o.Prezzo * o.Unita | currency: "EUR" }}</td>
+      </tr>
+      <tr>
+        <td><h4>Totale</h4></td>
+        <td></td>
+        <td>
+          <h6>{{ totale | currency: "EUR" }}</h6>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="d-flex flex-row-reverse">
+  <button class="btn btn-info" (click)="ordina()">Ordina</button>
+</div>
+
+<br />

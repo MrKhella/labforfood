@@ -1,0 +1,116 @@
+<body>
+  <div id="login">
+    <div class="alert alert-danger" role="alert" *ngIf="errorMes">
+      {{ errorMes }}
+    </div>
+    <h3 class="text-center text-info pt-5">Registrazione</h3>
+    <div class="container">
+      <div id="login-row" class="row justify-content-center align-items-center">
+        <div id="login-column" class="col-md-6">
+          <div id="login-box" class="col-md-12">
+            <form
+              method="post"
+              (submit)="onRegisterSubmit($event)"
+              id="register-form"
+              class="form"
+              action=""
+            >
+              <div class="form-group">
+                <label for="nominativo" class="text-info"
+                  >Nominativo:<span class="campoObbligatorio">*</span></label
+                ><br />
+                <input
+                  type="text"
+                  name="nominativo"
+                  id="nominativo"
+                  class="form-control"
+                  [(ngModel)]="nominativo"
+                  [ngClass]="getErrorCSS()"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="text-info"
+                  >Email:<span class="campoObbligatorio">*</span></label
+                ><br />
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  [(ngModel)]="email"
+                  class="form-control"
+                  [ngClass]="getErrorCSS()"
+                />
+              </div>
+              <div class="form-group">
+                <label for="username" class="text-info"
+                  >Username:<span class="campoObbligatorio">*</span></label
+                ><br />
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  class="form-control"
+                  [(ngModel)]="username"
+                  [ngClass]="getErrorCSS()"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password" class="text-info"
+                  >Password:<span class="campoObbligatorio">*</span
+                  ><span class="password">(esempio: Password1!)</span></label
+                ><br />
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  class="form-control"
+                  [(ngModel)]="password"
+                  [ngClass]="getErrorCSS()"
+                />
+              </div>
+              <div class="form-group check">
+                <label for="check" class="text-info"
+                  ><span [ngClass]="getErrorCSS()"
+                    ><input
+                      id="checkPrivacy"
+                      name="checkPrivacy"
+                      type="checkbox"
+                      [(ngModel)]="checkPrivacy"
+                  /></span>
+                  <span>
+                    Accetta termini e condizioni
+                    <span class="campoObbligatorio">*</span>
+                  </span>
+                   </label
+                ><br />
+                <button
+                  type="submit"
+                  class="btn btn-info btn-md"
+                  style="margin-top: 10px"
+                  [(ngModel)]="isValidateForm"
+                  name="isValidateForm"
+                >
+                  Registrati
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <span class="campoObbligatorio text-left">*Campo obbligatorio</span
+          ><br />
+          <div id="login-link" class="text-right">
+            <input
+              type="submit"
+              name="submit"
+              class="btn btn btn-outline-info btn-md"
+              style="float: left; margin-top: 10px"
+              value="Torna al Login"
+              routerLink="/login"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
